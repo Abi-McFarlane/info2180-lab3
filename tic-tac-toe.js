@@ -1,25 +1,10 @@
-"use strict";
-window.addEventListener("DOMContentLoaded", ()=>{
+window.onload = function () {
+    let gameLayout = new Array(9).fill(" ");
+    let boardSquares = document.querySelectorAll("#board > div");
     
-    const squares = document.querySelectorAll("#board > div");
-    
-    squares.forEach((square)=>{
-        square.classList.add("square");
-        square.innerHTML ="";
-    })
+    boardSquares.forEach((square, index) => {  
+        square.className = "square"
+        square.id = `${index}`
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
+    }
+}
