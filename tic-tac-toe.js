@@ -75,5 +75,23 @@ window.onload = function () {
         return false
 
     }
+
+    //Restarts the game
+    let newGameButton = document.getElementsByClassName("btn")[0]
+    newGameButton.addEventListener('click', () => {
+        gameLayout = new Array(9).fill(" ");
+        status.classList.remove("you-won")
+        status.innerHTML = "Move your mouse over a square and click to play an X or an O."
+        gameWon = false
+        boardSquares.forEach(square => {
+            if(square.classList.contains("X")){
+                square.classList.remove("X")
+            }else if(square.classList.contains("O")){
+                square.classList.remove("O")
+            }
+            square.innerHTML = ""
+        })
+    })
+
 }
 
